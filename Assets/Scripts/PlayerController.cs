@@ -11,21 +11,16 @@ public class PlayerController : MonoBehaviour {
 	public static int playerHP=3;
 	public static int Ammo=30;   
 	public static int stage;
+	public GameObject ball;
 		public Text ammoTxT;
 		public Text HPtxt;
-		/*bool isRewinding = false;
-		public float recordTime;
-		List<PointinTime>pointsInTime;
-		Rigidbody rb;
-		*/	
+		
 
 
 		// Use this for initialization
 		void Start () {
 			key = 0;
-			/*pointsInTime=new List<PointinTime>();
-			rb = GetComponent<Rigidbody> ();
-	*/
+			
 	Cursor.lockState = CursorLockMode.Locked;
 			
 		}
@@ -40,13 +35,7 @@ public class PlayerController : MonoBehaviour {
 				gunSound.Play ();
 				Ammo--;      //ココ！
 			}
-			/*if (Input.GetMouseButtonDown (1)) {
-				StartRewinding ();
-			}
-			if(Input.GetMouseButtonUp(1)){
-				StopRewinding();
-			}*/
-				
+
 					
 
 
@@ -82,41 +71,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	}
-	/*void FixUpdate(){
-		if (isRewinding)
-			Rewinding();
-		else
-			Record();
 
-	}
-	void Record(){
-		if (pointsInTime.Count > Mathf.Round (recordTime / Time.fixedDeltaTime))
-			pointsInTime.RemoveAt (pointsInTime.Count - 1);
-
-
-		pointsInTime.Insert (0, new PointinTime(transform.position,transform.rotation));
-
-	}
-	void Rewinding ()
-	{
-		if (pointsInTime.Count > 0) {
-			PointinTime pointIntime = pointsInTime [0];
-			transform.position = pointIntime.position;
-			transform.rotation = pointIntime.rotation;
-			pointsInTime.RemoveAt (0);
-		} else
-			StopRewinding ();
-	}
-
-	public void StartRewinding(){
-		isRewinding = true;
-		rb.isKinematic = true;
-	}
-	public void StopRewinding(){
-		isRewinding = false;
-		rb.isKinematic = false;
-	}
-*/
 	void playerDamage(){
 		playerHP--;
 
@@ -135,7 +90,7 @@ public class PlayerController : MonoBehaviour {
 
 	}
 	void Shot(){
-		int distance = 15;
+		/*int distance = 15;
 		Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
 		Ray ray = camera.ScreenPointToRay (center);
 		RaycastHit hitInfo;
@@ -149,6 +104,13 @@ public class PlayerController : MonoBehaviour {
 			//Debug.Log("name :"+hitInfo.collider.name);
 		}
 
+*/
+		Vector3 pos = transform.position + transform.TransformDirection(Vector3.forward)*0.55f;		
+		GameObject ball_ins = Instantiate(ball , pos , Quaternion.identity) as GameObject;		
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		Vector3 direction = ray.direction;
+		ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 2000);
+		Destroy (ball_ins.gameObject, 5f);
 
 
 	}

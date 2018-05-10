@@ -47,7 +47,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.934948, y: 4, z: -1.3962374}
+  m_LocalPosition: {x: 107.30105, y: 11, z: 57.834896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -507,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 2000000}
   gunSound: {fileID: 82050557509874290}
+  ball: {fileID: 1500562159881862, guid: 87a1bbe4df5a2465980b540ff8a77a16, type: 2}
   ammoTxT: {fileID: 0}
   HPtxt: {fileID: 0}
 --- !u!114 &114462068801075282
