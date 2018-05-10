@@ -5,6 +5,7 @@ using UnityEngine;
 public class balletScript : MonoBehaviour {
 	public GameObject explosion;
 	public GameObject ex;
+	public GameObject ball;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,9 @@ public class balletScript : MonoBehaviour {
 		if (col.gameObject.tag != "player"||col.gameObject.tag!="MainCamera") {
 			explosion.gameObject.SetActive (true);
 			ex.gameObject.SetActive (true);
+			ball.gameObject.SetActive (false);
+
+
 		}
 	}
 

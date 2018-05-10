@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Fire
   - player
+  - SF_Door
+  - stage
   layers:
   - Default
   - TransparentFX
