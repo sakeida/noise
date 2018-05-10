@@ -88,15 +88,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4870252030474722}
   - component: {fileID: 33152738127398750}
-  - component: {fileID: 135498562134807372}
   - component: {fileID: 23554279718467156}
+  - component: {fileID: 114540691983034606}
+  - component: {fileID: 135025158291202474}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1196047597749952
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ GameObject:
   - component: {fileID: 114822324848384434}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +268,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500562159881862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 51.43, y: 8.69, z: 12.41}
   m_LocalScale: {x: 0.16767734, y: 0.16767734, z: 0.16767734}
   m_Children:
   - {fileID: 4009772257437408}
@@ -348,8 +349,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141866592045688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0.02, y: 0, z: 0}
+  m_LocalScale: {x: 43.002766, y: 43.00276, z: 43.00276}
   m_Children: []
   m_Father: {fileID: 4270716717253456}
   m_RootOrder: 1
@@ -588,6 +589,17 @@ MonoBehaviour:
   explosion: {fileID: 1019933460967712}
   ex: {fileID: 1141866592045688}
   ball: {fileID: 1196047597749952}
+--- !u!114 &114540691983034606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141866592045688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b062708b509544c38d3418d9dbefca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114636517676991780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -599,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac1691131a8c844dafe8b6ace6a172a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 20
+  explosionForce: 0
 --- !u!114 &114721825769009628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRewinding: 0
---- !u!135 &135498562134807372
+--- !u!135 &135025158291202474
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -632,7 +644,7 @@ SphereCollider:
   m_GameObject: {fileID: 1141866592045688}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -643,7 +655,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500562159881862}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

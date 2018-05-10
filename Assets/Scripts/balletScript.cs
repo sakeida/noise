@@ -23,11 +23,16 @@ public class balletScript : MonoBehaviour {
 			explosion.gameObject.SetActive (true);
 			ex.gameObject.SetActive (true);
 			ball.gameObject.SetActive (false);
+			ex.GetComponent<SphereCollider>().enabled = true;
 
+			StartCoroutine ("Destrooy");
 
 		}
 	}
-
+	IEnumerator Destrooy(){
+		yield return new WaitForSeconds (0.5f);
+		Destroy (this.gameObject);
+	}
 	
 /*	IEnumerator Destrooy(){
 		yield return new WaitForSeconds (0.4f);

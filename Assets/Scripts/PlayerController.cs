@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour {
 	public Camera camera;
 	public AudioSource gunSound;
 	public static int key;
-	public static int playerHP=3;
+	public static int playerHP=20;
 	public static int Ammo=30;   
 	public static int stage;
+	public static int FLAG=0;
 	public GameObject ball;
 		public Text ammoTxT;
 		public Text HPtxt;
@@ -76,6 +77,9 @@ public class PlayerController : MonoBehaviour {
 		playerHP--;
 
 
+	}
+	void getFLAG(){
+		FLAG++;
 	}
 	void getKey(){
 		key++;

@@ -9,6 +9,7 @@ TagManager:
   - player
   - SF_Door
   - stage
+  - bullet
   layers:
   - Default
   - TransparentFX
