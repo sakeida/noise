@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class botton : MonoBehaviour {
 
-
+	public GameObject cubs;
 
 	int enemyHP=1;
 
@@ -26,6 +26,7 @@ public class botton : MonoBehaviour {
 
 		if (enemyHP == 0) {
 			Destroy (gameObject);
+			cubs.SetActive (true);
 
 		}
 	}
