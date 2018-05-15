@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 114089638941627900}
   - component: {fileID: 195427556588887926}
   - component: {fileID: 65264134576786944}
+  - component: {fileID: 135053460621102482}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -1056,6 +1057,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!135 &135053460621102482
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969442262331760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8867642
+  m_Center: {x: 0, y: 0.44017354, z: -0.48650613}
 --- !u!137 &137600563615095180
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

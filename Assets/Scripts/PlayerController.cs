@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	public static int Ammo=30;   
 	public static int stage;
 	public static int FLAG=0;
+	bool noiseFlag=false;
 	public GameObject ball;
 		public Text ammoTxT;
 		public Text HPtxt;
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour {
 		GameObject ball_ins = Instantiate(ball , pos , Quaternion.identity) as GameObject;		
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		Vector3 direction = ray.direction;
-		ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 2000);
+		ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 1800);
 		Destroy (ball_ins.gameObject, 5f);
 
 

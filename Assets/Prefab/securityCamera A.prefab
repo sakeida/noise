@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 23631043152723242}
   - component: {fileID: 114204016115551862}
   - component: {fileID: 114180620112030248}
+  - component: {fileID: 114018782600870558}
   m_Layer: 0
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -307,7 +308,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309409419726214}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 28.5, y: 8.72, z: 26}
+  m_LocalPosition: {x: 28.5, y: 8.72, z: 49.56}
   m_LocalScale: {x: 0.13427152, y: 0.13427152, z: 0.13427152}
   m_Children:
   - {fileID: 4303924491952858}
@@ -1033,6 +1034,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114018782600870558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934049097255890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d21626795a844ccfaefae95d25466e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114180620112030248
 MonoBehaviour:
   m_ObjectHideFlags: 1

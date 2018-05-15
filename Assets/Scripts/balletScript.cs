@@ -19,7 +19,7 @@ public class balletScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag != "player"||col.gameObject.tag!="MainCamera") {
+		if (col.gameObject.tag != "player"&&col.gameObject.tag!="MainCamera"&&col.gameObject.tag!="BOSS") {
 			explosion.gameObject.SetActive (true);
 			ex.gameObject.SetActive (true);
 			ball.gameObject.SetActive (false);

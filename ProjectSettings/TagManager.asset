@@ -10,6 +10,9 @@ TagManager:
   - SF_Door
   - stage
   - bullet
+  - timeCube
+  - misille
+  - BOSS
   layers:
   - Default
   - TransparentFX

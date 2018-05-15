@@ -6,6 +6,7 @@
 	public class LootCrateKeyController : MonoBehaviour {
 		private LootCrate _lootCrate;
 	public GameObject noise;
+	bool flag=false;
 		/*public KeyCode openKey = KeyCode.Space;
 		public KeyCode closeKey = KeyCode.Space;
 
@@ -24,9 +25,10 @@
 			if (Input.GetKeyDown(closeKey) && _lootCrate.IsOpen()) _lootCrate.Close();
 		}*/
 		void OnTriggerEnter ( Collider obj  ){
-		if (obj.gameObject.tag == "player") {
+		if (obj.gameObject.tag == "player"&&flag==false) {
 			_lootCrate.Open ();
 			noise.gameObject.SetActive (true);
+			flag = true;
 		}
 	}
 

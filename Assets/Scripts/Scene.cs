@@ -22,7 +22,7 @@ public class Scene : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "player") {
 			SceneManager.LoadScene (nextstage);
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 		}
 
 

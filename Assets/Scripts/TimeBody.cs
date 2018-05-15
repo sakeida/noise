@@ -36,7 +36,9 @@ public class TimeBody : MonoBehaviour {
 			transform.rotation = pointInTime.rotation;
 			pointsInTime.RemoveAt(0);
 		} else {
-			stopRewind ();
+			//stopRewind ();
+			isRewinding=false;
+			rb.isKinematic = true;
 		}
 	}
 
