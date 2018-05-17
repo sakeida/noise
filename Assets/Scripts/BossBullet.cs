@@ -8,7 +8,7 @@ public class BossBullet : MonoBehaviour {
 	public GameObject obj;
 	void Update () {
 		GameObject player = GameObject.Find ("FPSController");
-		float speed = 5.0f;
+		float speed = 11.0f;
 		float step = Time.deltaTime * speed;
 		transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
 		transform.LookAt(player.transform);
@@ -16,7 +16,7 @@ public class BossBullet : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag!="BOSS"&&col.gameObject.tag!="Enemy") {
+		if (col.gameObject.tag!="BOSS"&&col.gameObject.tag!="Enemy"&&col.gameObject.tag!="bullet") {
 			explosion.gameObject.SetActive (true);
 			obj.gameObject.SetActive (false);
 			StartCoroutine ("Destrooy");

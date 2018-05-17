@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossHP : MonoBehaviour {
 	int enemyHP=30;
 	public GameObject boss;
+	public GameObject END;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,8 @@ public class BossHP : MonoBehaviour {
 
 
 			if (enemyHP == 0) {
+			END.gameObject.SetActive (true);
 			Destroy (boss.gameObject);
-
 			}
 		}
 

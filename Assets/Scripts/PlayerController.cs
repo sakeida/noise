@@ -13,10 +13,14 @@ public class PlayerController : MonoBehaviour {
 	public static int stage;
 	public static int FLAG=0;
 	bool noiseFlag=false;
+	bool shotinterval=false;
 	public GameObject ball;
 		public Text ammoTxT;
 		public Text HPtxt;
-		
+
+
+	public GameObject muzzle; 
+
 
 
 		// Use this for initialization
@@ -32,10 +36,12 @@ public class PlayerController : MonoBehaviour {
 			ammoTxT.text = Ammo.ToString ();
 			HPtxt.text = "HP:"+playerHP.ToString ();
 			
-			if (Input.GetMouseButtonDown (0)&&Ammo>0) {//ココ
+		if (Input.GetMouseButtonDown (0)&&Ammo>0&&!shotinterval) {//ココ
 				Shot ();
 				gunSound.Play ();
 				Ammo--;      //ココ！
+			shotinterval=true;
+			StartCoroutine ("interval");
 			}
 
 					
@@ -95,28 +101,32 @@ public class PlayerController : MonoBehaviour {
 
 	}
 	void Shot(){
-		/*int distance = 15;
-		Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
-		Ray ray = camera.ScreenPointToRay (center);
-		RaycastHit hitInfo;
-		if (Physics.Raycast (ray, out hitInfo, distance)) {
-			if (hitInfo.collider.tag == "Enemy") {
-				hitInfo.collider.SendMessage ("Damage");
-			}
+
+		//Vector3 pos = transform.position + transform.TransformDirection(Vector3.forward)*0.55f;		
+		//GameObject ball_ins = Instantiate(ball , pos , Quaternion.identity) as GameObject;		
+		//Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		//Vector3 direction = ray.direction;
+		//ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 1800);
+		//ball_ins.GetComponent<Rigidbody> ().AddForce (direction* 1800);
+		//GameObject obj = Instantiate(ball, new Vector3 (muzzle.transform.position.x,muzzle.transform.position.y+0.5f,muzzle.transform.position.z), muzzle.transform.rotation) as GameObject;
+		//飛ばす方向は muzzle オブジェクトのz軸方向の向き ( transform.forward )
+		//obj.GetComponent<Rigidbody>().velocity = transform.forward * 150;
+
+		//Instantiate (ball, muzzle.transform.position, new Vector3(muzzle.transform.rotation.w,rotaX.transform.rotation.x,rotaY.transform.rotation.y,muzzle.transform.rotation.z));
 
 
-			//Debug.DrawLine (ray.origin, hitInfo.point, Color.red);
-			//Debug.Log("name :"+hitInfo.collider.name);
-		}
+//		Vector3 pos = transform.position + transform.TransformDirection(Vector3.forward)*0.55f;		
+//		GameObject ball_ins = Instantiate(ball , pos , Quaternion.identity) as GameObject;		
+//		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+//		Vector3 direction = ray.direction;
+//		ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 10);
+//		Destroy (ball_ins.gameObject, 5f);
 
-*/
-		Vector3 pos = transform.position + transform.TransformDirection(Vector3.forward)*0.55f;		
-		GameObject ball_ins = Instantiate(ball , pos , Quaternion.identity) as GameObject;		
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		Vector3 direction = ray.direction;
-		ball_ins.GetComponent<Rigidbody> ().AddForce (direction.normalized * 1800);
-		Destroy (ball_ins.gameObject, 5f);
-
-
+		Instantiate (ball, muzzle.transform.position, muzzle.transform.rotation);
+	
+	}
+	IEnumerator interval(){
+		yield return new WaitForSeconds (0.9f);
+		shotinterval = false;
 	}
 }

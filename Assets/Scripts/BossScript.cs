@@ -11,6 +11,7 @@ public class BossScript : MonoBehaviour {
 	bool anime=true;
 	int enemyHP=30;
 	public Animator ANIME;
+
 	//
 
 	// Use this for initialization

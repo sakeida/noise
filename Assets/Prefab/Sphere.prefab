@@ -53,9 +53,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4719484952764888}
+  - component: {fileID: 135721926240679420}
   m_Layer: 0
   m_Name: Aim-54_Phoenix
-  m_TagString: Untagged
+  m_TagString: misille
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +127,7 @@ GameObject:
   - component: {fileID: 54089302742703722}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: misille
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1293,6 +1294,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionForce: 1
+--- !u!135 &135721926240679420
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075744692697980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 565.2184
+  m_Center: {x: -322.12753, y: 193.49503, z: 319.7287}
 --- !u!135 &135983887561365418
 SphereCollider:
   m_ObjectHideFlags: 1

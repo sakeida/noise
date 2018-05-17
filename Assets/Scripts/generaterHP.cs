@@ -9,7 +9,7 @@ public class generaterHP : MonoBehaviour {
 	public GameObject key;
 	public GameObject explosion;
 
-	int GeneHP=30;
+	int GeneHP=10;
 
 	//
 
